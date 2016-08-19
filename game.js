@@ -1,0 +1,15 @@
+
+var readline = require('readline');
+
+var readlineThing = readline.createInterface({
+    input: process.stdin
+    output:process.stdout
+});
+
+readlineThing.question("what is your name ", function(answer){
+console.log('Hi there ' + answer + ", welcome to the game!")
+readlineThing.close();
+})
+
+//console.log("This Game works!");
+
