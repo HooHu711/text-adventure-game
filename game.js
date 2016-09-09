@@ -34,8 +34,8 @@ function askClass() {
 function askGender() {
     readlineThing.question("Choose your gender: ", function(answer) {
         gender(answer);
-        console.log(Player);
-        readlineThing.close();
+         readlineThing.close();
+      
     })
 }
 
@@ -89,6 +89,7 @@ var Player = {
     gender: "Male",
     health: 20,
     currentLocation: location.town,
+    currentEnemy: null,
     skill: {
         1: null,
         2: null,
@@ -166,5 +167,13 @@ function chooseClass(answer) {
         })
     }
 }
+function wait(ms) {
+    var start = new Date().getTime();
+    for (var end = start; end < start + ms;) {
+        end = new Date().getTime();
+        console.log(end)
+    }
+}
+
 
 game.start();
