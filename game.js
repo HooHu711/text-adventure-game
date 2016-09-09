@@ -14,18 +14,6 @@ var game = {
     }
 }
 
-var location = {
-   
-   town: {
-        NPC: [], 
-        monsters: null
-   },
-   woods: {
-        NPC: []
-        Monsters: finalBoss
-
-   }
-}
 
 function initialize() {
     readlineThing.question("What is your name? ", function(answer) {
@@ -73,8 +61,8 @@ var Player = {
         }
     }
 }
-
-var finalBoss = {
+var enemies = {
+    finalBoss: {
     name: "Alan",
     health: 100,
     skill: {
@@ -84,8 +72,35 @@ var finalBoss = {
         },
         taunt: function() {
             console.log("go home noob");
+            }
+        }
+    },
+    ogres: {
+        name: "Rejected One",
+        health: 20,
+        skill: {
+            attack: function() {
+                console.log("get Shrekt")
+                Player.health = Player.health - 5;
+            },
+            ogreFood: function() {
+                console.log("Bweakfast")
+                enemies.ogre.health = enemies.ogre.health + 2
+            }
         }
     }
+}
+var location = {
+   
+   town: {
+        NPC: [], 
+        monsters: null
+   },
+   woods: {
+        NPC: [],
+        Monsters: enemies.finalBoss
+
+   }
 }
 
 function Name(answer) {
