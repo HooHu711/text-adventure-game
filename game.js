@@ -14,6 +14,19 @@ var game = {
     }
 }
 
+var location = {
+   
+   town: {
+        NPC: [], 
+        monsters: null
+   },
+   woods: {
+        NPC: []
+        Monsters: finalBoss
+
+   }
+}
+
 function initialize() {
     readlineThing.question("What is your name? ", function(answer) {
         Name(answer);
@@ -21,6 +34,7 @@ function initialize() {
         askClass();
     })
 }
+
 
 function askClass() {
     readlineThing.question("Choose your class: (Mage, Warrior, Thief) ", function(answer) {
